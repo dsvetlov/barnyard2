@@ -41,11 +41,12 @@
 %{?_with_libpcap1:%define libpcap1 1}
 
 
-Summary: Snort Log Backend 
+Summary: Snort Log Backend
 Name: barnyard2
 Version: 1.13
 Source0: https://github.com/firnsy/barnyard2/archive/v2-%{version}.tar.gz
 Release: 1%{?dist}
+Epoch: 1
 License: GPL
 Group: Applications/Internet
 Url: http://www.github.com/firnsy/barnyard2
@@ -128,9 +129,9 @@ ORACLE_HOME=%{OracleHome}
 make
 
 %install
-%makeinstall 
+%makeinstall
 
-%{__install} -d -p $RPM_BUILD_ROOT%{_sysconfdir}/{sysconfig,rc.d/init.d,snort} 
+%{__install} -d -p $RPM_BUILD_ROOT%{_sysconfdir}/{sysconfig,rc.d/init.d,snort}
 %{__install} -d -p $RPM_BUILD_ROOT%{_datadir}/snort
 %{__install} -m 644 rpm/barnyard2.config $RPM_BUILD_ROOT%{_sysconfdir}/sysconfig/barnyard2
 %{__install} -m 755 rpm/barnyard2 $RPM_BUILD_ROOT%{_sysconfdir}/rc.d/init.d/barnyard2
@@ -203,14 +204,14 @@ fi
 * Mon Sep 13 2009 Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 - barnyard2-1.7-beta2
 
-* Mon Apr 27 2009 Jason Haar <jhaar@users.sf.net> 
-- Converted barnyard-0.2.0 .spec 
+* Mon Apr 27 2009 Jason Haar <jhaar@users.sf.net>
+- Converted barnyard-0.2.0 .spec
 
 * Wed Sep 13 2006 Matthew Hall <matt@ecsc.co.uk> 0.2.0-3%{?dist}
 - Apply Colin Grady's schema patches
 
 * Tue Jun 06 2006 Fabien Bourdaire <fabien@ecsc.co.uk> 0.2.0-1%{?dist}
-- Build for FireHat 2.0 
+- Build for FireHat 2.0
 
 * Sat Sep 04 2004 Ralf Spenneberg <ralf@spenneberg.net>
 - migrated to Barnyard 0.2.0 and Fedora Core 2
